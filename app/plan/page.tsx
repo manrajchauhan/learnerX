@@ -17,7 +17,7 @@ export default function Page() {
             Subscription Plans
           </h1>
           <div className="flex flex-col xs:flex-row mb-10 items-center justify-center">
-            <span className={`text-xl ${toggle ? 'text-orange-500' : 'text-black'}`}>
+            <span className={`text-xl ${toggle ? 'text-black' : 'text-orange-500'}`}>
               Billed monthly
             </span>
             <div className="inline-flex p-0.5 my-4 xs:my-0 xs:mx-4 lg:mx-8 bg-orange-500 rounded-full">
@@ -31,7 +31,7 @@ export default function Page() {
               ></button>
             </div>
             <div className="inline-flex items-center">
-              <span className={`inline-block mr-3 text-xl ${toggle ? 'text-black' : 'text-orange-500'}`}>
+              <span className={`inline-block mr-3 text-xl ${toggle ? 'text-orange-500' : 'text-black'}`}>
                 Billed yearly
               </span>
               <span className="inline-block py-1.5 px-3 text-xs text-black border-1.5 border-white rounded-full">
