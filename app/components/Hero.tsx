@@ -4,7 +4,7 @@ import React from 'react'
 export default function Hero() {
   return (
     <div>
-    <div className="flex overflow-hidden z-0 flex-col justify-center pt-28 pb-20 w-full text-neutral-900 font-medium max-md:px-5 max-md:pt-24 max-md:max-w-full">
+    <div className="flex overflow-hidden z-0 flex-col justify-center pt-28 pb-20 w-full text-neutral-900 font-medium  max-md:pt-24 max-md:max-w-full">
       <div className="flex flex-col justify-center w-full max-md:max-w-full">
         <div className=" text-8xl font-medium leading-[103px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
       <h1>Empower Your Future with LearnerX</h1>

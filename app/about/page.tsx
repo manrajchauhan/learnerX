@@ -5,8 +5,9 @@ export default function page() {
   return (
     <section className="bg-darkBlue-900 pt-24 pb-28">
   <div className="container mx-auto px-4">
-    <h1 className="font-heading text-neutral-900 text-center mb-28 text-5xl md:text-7xl font-bold max-w-4xl mx-auto">
-    Discover, Learn, and Grow with US</h1>
+    <h1 className="font-heading text-6xl sm:text-8xl lg:text-10xl text-black tracking-tighter mb-12">
+    Discover, Learn, and Grow with US
+          </h1>
     <div className="relative mx-auto mb-32 max-w-sm">
       <div className="absolute left-0 top-0 bg-orange-500 blur-3xl filter opacity-50 rounded-full h-full w-full"></div>
       <Image className="relative z-50" width={400} height={400} src="/logo.svg" alt=""/>
