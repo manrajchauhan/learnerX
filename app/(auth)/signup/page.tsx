@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function page() {
@@ -48,8 +49,8 @@ export default function page() {
               Sign Up
             </button>
             <div className="self-center mt-10 text-sm font-medium leading-7 text-neutral-700">
-              <span className=" text-neutral-700">Don’t have an account?</span>{" "}
-              <span className="text-neutral-900">Sign Up</span>
+              <span className=" text-neutral-700">Already have an account?</span>{" "}
+              <Link href={"/login"} className="text-neutral-900">Sign In</Link>
             </div>
           </form>
         </div>

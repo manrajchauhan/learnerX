@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 export default function Header() {
   return (
@@ -26,12 +25,12 @@ export default function Header() {
               <Link href={'/about'}className="self-stretch my-auto hover:font-normal">About Us</Link>
             </div>
             <div className="flex gap-2 items-start self-stretch p-2 my-auto ">
-             <div className='btn-login rounded border border-neutral-300 px-2 py-1 hover:bg-neutral-50'>
+             <div className='btn-login  border-neutral-900 px-2 py-1 hover:bg-neutral-50'>
             <Link href={'/login'} className='text-[16px] font-light hover:font-normal'>
             Log in
             </Link>
              </div>
-             <div className='btn-signup rounded border border-neutral-300 bg-black text-white px-2 py-1 hover:bg-neutral-800'>
+             <div className='btn-signup rounded-3xl border border-neutral-900 bg-black text-white px-2 py-1 hover:bg-neutral-800'>
             <Link href={'/signup'} className='text-[16px] font-light hover:font-normal'>
             Sign Up
             </Link>
