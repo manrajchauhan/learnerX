@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 export default function Page() {
+
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -10,6 +11,7 @@ export default function Page() {
   };
 
   return (
+
     <section className="py-12 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto mb-20 text-center">
@@ -97,5 +99,6 @@ export default function Page() {
         </div>
       </div>
     </section>
+
   );
 }

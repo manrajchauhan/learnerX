@@ -17,7 +17,7 @@ export default function page() {
         <div className="w-full md:w-1/3 lg:w-1/2 p-4">
           <div className="border-r border-transparent md:border-white md:border-opacity-10 flex flex-col justify-center h-full">
             <p className="text-neutral-900 text-center md:text-left text-opacity-50 mb-2">LearnerX</p>
-            <p className="text-neutral-900 text-center md:text-left mx-auto md:mx-0 text-2xl font-semibold max-w-xs">Funded by Shraddha Kamble</p>
+            <p className="text-neutral-900 text-center md:text-left mx-auto md:mx-0 text-2xl font-semibold max-w-xs">Founded by Shraddha Kamble</p>
           </div>
         </div>
         <div className="w-full md:w-1/3 lg:w-1/4 p-4">
