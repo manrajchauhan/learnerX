@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css"; // Keep your global CSS
+import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { AuthProvider } from './context/AuthContext';
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-helvetica"> {/* Apply Helvetica globally */}
+      <body className="font-helvetica">
         <div className="px-8 md:px-24 pb-12">
           <AuthProvider>
             <Header />

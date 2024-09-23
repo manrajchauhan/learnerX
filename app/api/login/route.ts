@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // Connect to the database
+
     await connectToDatabase();
 
     // Find the user by email

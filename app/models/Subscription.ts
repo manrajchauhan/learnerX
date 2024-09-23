@@ -2,7 +2,7 @@ import mongoose, { Document, Model } from 'mongoose';
 
 interface IPlan extends Document {
   name: string;
-  priceMonthly: number;
+  price: number;
   priceYearly: number;
   description: string;
   features: string[];
@@ -14,7 +14,7 @@ const PlanSchema = new mongoose.Schema<IPlan>({
     type: String,
     required: true,
   },
-  priceMonthly: {
+  price: {
     type: Number,
     required: true,
   },
