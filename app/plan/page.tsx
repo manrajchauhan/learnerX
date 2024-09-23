@@ -3,8 +3,11 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 const isAuthenticated = () => {
-  const token = localStorage.getItem('token');
-  return !!token;
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+  return false; // Fallback if not in client context
 };
 
 interface ISubscription {
@@ -66,7 +69,7 @@ export default function Page() {
         {/* Display error if there's an issue */}
         {error && <div className="text-center text-lg text-red-500 mb-10">{error}</div>}
 
-        {/* Display the message if authenticated and no active plan */}
+        {/* Display message if authenticated and no active plan */}
         {isAuthenticated() && !loading && !activePlan && (
           <div className="text-center text-lg text-red-500 mb-10">
             You currently have no active plans. Please choose a subscription plan from below.
@@ -81,7 +84,7 @@ export default function Page() {
             ) : (
               plans.length > 0 ? (
                 plans.map(plan => (
-                  <div key={plan._id} className="w-full lg:w-1/2 border-b lg:border-b-0  border-neutral-800">
+                  <div key={plan._id} className="w-full lg:w-1/2 border-b lg:border-b-0 border-neutral-800">
                     <div className="h-full pt-10 pb-12 lg:pb-24 px-8">
                       <div className="max-w-sm mx-auto text-center">
                         <span className="block mb-2 text-xl font-medium text-black">{plan.name}</span>
