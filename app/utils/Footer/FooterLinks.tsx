@@ -22,7 +22,7 @@ const linkGroups: LinkItem[][] = [
 
 const FooterLinks = () => {
   return (
-    <nav className="flex flex-col flex-1 shrink text-xl font-semibold leading-9 basis-0 min-w-[240px] text-neutral-900 max-md:max-w-full">
+    <nav className="flex flex-col flex-1 shrink text-xl  leading-9 basis-0 min-w-[240px] text-neutral-900 max-md:max-w-full">
       <div className="flex flex-wrap gap-4 items-start w-full max-md:max-w-full">
         {linkGroups.map((group, groupIndex) => (
           <div key={groupIndex} className="flex flex-col flex-1 shrink basis-0 min-w-[240px]">

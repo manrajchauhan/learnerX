@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.css"; // Keep your global CSS
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { AuthProvider } from './context/AuthContext';
 
 export const metadata: Metadata = {
   title: "Welcome to LearnerX - E-Learning Platform",
-  description: "LearnerX Platform provides you the various courses web development, web desinging",
+  description: "LearnerX Platform provides you with various courses on web development and web designing.",
 };
 
 export default function RootLayout({
@@ -18,12 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-      <div className="px-8 md:px-24 pb-12">
-        <Header/>
-        {children}
-        <Footer/>
-      </div>
+      <body className="font-helvetica"> {/* Apply Helvetica globally */}
+        <div className="px-8 md:px-24 pb-12">
+          <AuthProvider>
+            <Header />
+            {children}
+          </AuthProvider>
+          <Footer />
+        </div>
       </body>
     </html>
   );
