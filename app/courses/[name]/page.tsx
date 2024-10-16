@@ -4,7 +4,6 @@ import HeroBottom from '@/app/components/HeroBottomCourses';
 import Image from 'next/image';
 import { FaVideo, FaFileAudio, FaFilePdf } from 'react-icons/fa';
 import { useAuth } from '@/app/context/AuthContext';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 interface Course {
@@ -38,7 +37,6 @@ const CourseDetails: React.FC<PageProps> = ({ params }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const { isAuthenticated, user } = useAuth();
-  const router = useRouter();
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
@@ -59,42 +57,6 @@ const CourseDetails: React.FC<PageProps> = ({ params }) => {
 
     fetchCourseDetails();
   }, [name]);
-
-  const handleFreePurchase = async () => {
-    console.log("Handle Free Purchase called");
-    if (!course || !user) {
-      console.log("Course or user not defined");
-      return;
-    }
-
-    const purchaseData = {
-      courseId: course._id,
-      courseName: course.name,
-      email: user.email,
-      price: course.currentPrice,
-    };
-
-    try {
-      const response = await fetch('/api/purchase', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(purchaseData),
-      });
-
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(`Failed to store purchase data: ${errorMessage}`);
-      }
-
-      alert(`You have successfully enrolled in the course: ${course.name}`);
-      router.push('/purchase-confirmation');
-    } catch (err) {
-      console.error("Error in handleFreePurchase:", err);
-      alert('Failed to complete the purchase. Please try again later.');
-    }
-  };
 
   if (loading) {
     return <div>Loading course details...</div>;
