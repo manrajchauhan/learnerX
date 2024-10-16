@@ -1,47 +1,46 @@
 import React from 'react'
-import FooterLinks from '../utils/Footer/FooterLinks'
-import ContactInfo from '../utils/Footer/ContactInfo'
 import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="flex overflow-hidden z-0 flex-col justify-center px-10 pt-20 w-full border-t border-solid border-t-neutral-900 max-md:max-w-full">
-    <div className="flex flex-wrap gap-10 items-start w-full max-md:max-w-full">
-      <div className="flex flex-col items-start min-w-[240px] w-[296px]">
-       <Image
-       src={'/logo.svg'}
-       width={203}
-       height={39}
-       alt='brand logo'
-       />
+    <section className="overflow-hidden mt-10 ">
+    <div className="py-24">
+      <div className=" px-4 mx-auto">
+        <div className="flex flex-wrap justify-between -m-8 mb-28">
+          <div className="w-full md:w-1/2 lg:w-4/12 p-8">
+            <div className="md:max-w-xs">
+              <img className="mb-7" src="/logo.svg" alt=""/>
+              <p className="text-gray-800 tracking-tight font-medium">LearnerX, we believe in the transformative power of education. </p>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-2/12 p-8">
+            <h3 className="mb-6 text-lg text-black font-medium">About</h3>
+            <ul>
+              <li className="mb-2.5"><a className="inline-block text-lg font-medium text-gray-800 tracking-tight hover:text-black transition duration-300" href="/contact">Contact</a></li>
+
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-2/12 p-8">
+            <h3 className="mb-6 text-lg text-black font-medium">Company</h3>
+            <ul>
+              <li className="mb-2.5"><a className="inline-block text-lg font-medium text-gray-800 tracking-tight hover:text-black transition duration-300" href="/plan">Pricing</a></li>
+              <li className="mb-2.5"><a className="inline-block text-lg font-medium text-gray-800 tracking-tight hover:text-black transition duration-300" href="/about">About</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex flex-wrap justify-between -m-2">
+          <div className="w-auto p-2">
+            <p className="inline-block text-sm font-medium text-black text-opacity-60">© 2024 Learnerx.co</p>
+          </div>
+          <div className="w-auto p-2">
+            <div className="flex flex-wrap items-center -m-2 sm:-m-7">
+              <div className="w-auto p-2 sm:p-7"><a className="inline-block text-sm text-black text-opacity-60 hover:text-opacity-100 font-medium transition duration-300" href="#">Terms of Use</a></div>
+              <div className="w-auto p-2 sm:p-7"><a className="inline-block text-sm text-black text-opacity-60 hover:text-opacity-100 font-medium transition duration-300" href="#">Privacy Policy</a></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <FooterLinks />
-      <ContactInfo />
     </div>
-    <div className="overflow-hidden gap-2.5 self-stretch mt-10 w-full text-lg font-semibold leading-8 text-neutral-900 max-md:max-w-full">
-      <span className="font-light text-neutral-900">Powered by </span>
-      <a
-        className="text-neutral-600"
-        target="_blank"
-      >
-        LearnerX
-      </a>
-      <span className="font-light text-neutral-900"> | </span>
-      <a
-        className="text-neutral-700"
-        target="_blank"
-      >
-       © 2024-25
-      </a>
-      {/* <span className="font-light text-neutral-900"> |</span>{" "}
-      <a
-        href=""
-        className="underline text-neutral-900"
-        target="_blank"
-      >
-        Licensing
-      </a> */}
-    </div>
-  </footer>
+  </section>
   )
 }

@@ -33,7 +33,7 @@ export default function LoginPage() {
 
       if (res.ok) {
         localStorage.setItem('token', data.token);
-        router.push('/dashboard');
+        router.push('/');
         window.location.reload();
       } else {
         setError(data.message);

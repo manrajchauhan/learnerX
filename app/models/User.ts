@@ -5,6 +5,8 @@ import bcrypt from 'bcryptjs';
 interface IUser extends Document {
   email: string;
   password: string;
+  courseIds: string[]; // Array to store enrolled course IDs
+  subscriptionPlanIds: string[]; // Array to store subscription plan IDs
   comparePassword: (password: string) => Promise<boolean>;
 }
 
@@ -12,6 +14,8 @@ interface IUser extends Document {
 const UserSchema: Schema<IUser> = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  courseIds: [{ type: Schema.Types.ObjectId, ref: 'Course' }], // Add array for enrolled course IDs
+  subscriptionPlanIds: [{ type: Schema.Types.ObjectId, ref: 'SubscriptionPlan' }], // Add array for subscription plan IDs
 });
 
 // Hash the password before saving

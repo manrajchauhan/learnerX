@@ -12,11 +12,10 @@ export default function Page() {
   const [success, setSuccess] = useState('');
   const router = useRouter();
 
-  // Check if the user is already authenticated
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      router.push('/'); // Redirect to homepage if authenticated
+      router.push('/');
     }
   }, [router]);
 
@@ -29,6 +28,7 @@ export default function Page() {
     try {
       const response = await axios.post('/api/signup', { email, password });
       setSuccess('Account created successfully. Please log in.');
+      router.push('/login');
     } catch (error) {
       if (axios.isAxiosError(error)) {
         setError(error.response?.data.message || 'An unexpected error occurred.');
@@ -42,8 +42,8 @@ export default function Page() {
     <div className="flex overflow-hidden gap-2.5 justify-center items-center px-20 py-36 bg-white max-md:px-5 max-md:py-24 max-md:max-w-full">
       <div className="flex flex-col items-center self-stretch my-auto min-w-[240px] w-[448px] max-md:max-w-full">
         <div className="flex flex-col items-center mt-14 text-center max-md:mt-10">
-          <div className="text-5xl tracking-tighter leading-none text-neutral-900 max-md:text-4xl">
-            Sign Up
+          <div className="text-5xl tracking-tighter leading-none text-neutral-900 max-md:text-5xl">
+            Sign Up Your Account
           </div>
           <div className="mt-3 text-sm leading-none text-neutral-700">
             Create your account with email and password
