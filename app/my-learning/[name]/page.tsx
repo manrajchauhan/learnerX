@@ -124,7 +124,7 @@ const LearningDetails: React.FC<PageProps> = ({ params }) => {
             ))}
           </ul>
 
-          {/* Topics Section */}
+
           <h1 className='text-black pt-8 pb-4 text-3xl font-bold tracking-tighter'>Topics</h1>
           <hr className='mb-10'/>
           <ul className='list-disc pl-5 mb-10'>
@@ -133,7 +133,6 @@ const LearningDetails: React.FC<PageProps> = ({ params }) => {
             ))}
           </ul>
 
-          {/* Requirements Section */}
           <h1 className='text-black pt-8 pb-4 text-3xl font-bold tracking-tighter'>Requirements</h1>
           <hr className='mb-10'/>
           <ul className='list-disc pl-5 mb-10'>
@@ -142,7 +141,6 @@ const LearningDetails: React.FC<PageProps> = ({ params }) => {
             ))}
           </ul>
 
-          {/* Who This Course Is For Section */}
           <h1 className='text-black pt-8 pb-4 text-3xl font-bold tracking-tighter'>Who This Course Is For</h1>
           <hr className='mb-10'/>
           <ul className='list-disc pl-5 mb-10'>
@@ -151,7 +149,6 @@ const LearningDetails: React.FC<PageProps> = ({ params }) => {
             ))}
           </ul>
 
-          {/* What This Course Includes Section */}
           <h1 className='text-black pt-8 pb-4 text-3xl font-bold tracking-tighter'>What This Course Includes</h1>
           <hr className='mb-10'/>
           <ul className='list-disc pl-5 mb-10'>
@@ -161,13 +158,11 @@ const LearningDetails: React.FC<PageProps> = ({ params }) => {
           </ul>
         </section>
 
-        {/* Sidebar Section */}
         <section className="text-headingchild text-md sticky top-16 h-[75vh] flex flex-col justify-between mx-auto">
           <div className="border p-6 bg-white rounded-[14px] overflow-y-auto">
             <h1 className='text-black py-2 text-3xl font-bold tracking-tighter'>Course Content</h1>
             <hr className='mb-4' />
 
-            {/* Check if courseContent exists and is an array */}
             {Array.isArray(course.courseContent) && course.courseContent.length > 0 ? (
               <div className="overflow-auto max-h-[60vh]">
                 {course.courseContent.map((content, index) => (
